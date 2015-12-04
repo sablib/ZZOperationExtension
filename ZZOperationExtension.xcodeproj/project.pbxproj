@@ -1,0 +1,676 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		111E8F9C1C06F627009B4DFF /* ZZSilentCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 111E8F9B1C06F627009B4DFF /* ZZSilentCondition.m */; };
+		113D7A611C04503B00BD5720 /* ZZURLSessionTaskOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 113D7A601C04503B00BD5720 /* ZZURLSessionTaskOperation.m */; };
+		113D7A641C0453C700BD5720 /* ZZNetworkObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 113D7A631C0453C700BD5720 /* ZZNetworkObserver.m */; };
+		113D7A671C04549C00BD5720 /* ZZHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 113D7A661C04549C00BD5720 /* ZZHelper.m */; };
+		11DB9DB31C040F33009F3F32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9DB21C040F33009F3F32 /* main.m */; };
+		11DB9DB61C040F33009F3F32 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9DB51C040F33009F3F32 /* AppDelegate.m */; };
+		11DB9DB91C040F33009F3F32 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9DB81C040F33009F3F32 /* ViewController.m */; };
+		11DB9DBC1C040F33009F3F32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11DB9DBA1C040F33009F3F32 /* Main.storyboard */; };
+		11DB9DBE1C040F33009F3F32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11DB9DBD1C040F33009F3F32 /* Assets.xcassets */; };
+		11DB9DC11C040F33009F3F32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11DB9DBF1C040F33009F3F32 /* LaunchScreen.storyboard */; };
+		11DB9DCC1C040F33009F3F32 /* ZZOperationExtensionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9DCB1C040F33009F3F32 /* ZZOperationExtensionTests.m */; };
+		11DB9DD71C040F33009F3F32 /* ZZOperationExtensionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9DD61C040F33009F3F32 /* ZZOperationExtensionUITests.m */; };
+		11DB9E031C040FFB009F3F32 /* NSArray+ZZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9DE61C040FFB009F3F32 /* NSArray+ZZExtension.m */; };
+		11DB9E041C040FFB009F3F32 /* NSError+ZZOperationErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9DE81C040FFB009F3F32 /* NSError+ZZOperationErrors.m */; };
+		11DB9E051C040FFB009F3F32 /* NSLock+ZZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9DEA1C040FFB009F3F32 /* NSLock+ZZExtension.m */; };
+		11DB9E061C040FFB009F3F32 /* NSOperation+ZZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9DEC1C040FFB009F3F32 /* NSOperation+ZZExtension.m */; };
+		11DB9E071C040FFB009F3F32 /* ZZBlockObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9DEE1C040FFB009F3F32 /* ZZBlockObserver.m */; };
+		11DB9E081C040FFB009F3F32 /* ZZBlockOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9DF01C040FFB009F3F32 /* ZZBlockOperation.m */; };
+		11DB9E091C040FFB009F3F32 /* ZZExclusivityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9DF21C040FFB009F3F32 /* ZZExclusivityController.m */; };
+		11DB9E0B1C040FFB009F3F32 /* ZZMutuallyExclusive.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9DF61C040FFB009F3F32 /* ZZMutuallyExclusive.m */; };
+		11DB9E0C1C040FFB009F3F32 /* ZZNegatedCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9DF81C040FFB009F3F32 /* ZZNegatedCondition.m */; };
+		11DB9E0D1C040FFB009F3F32 /* ZZOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9DFA1C040FFB009F3F32 /* ZZOperation.m */; };
+		11DB9E0E1C040FFB009F3F32 /* ZZOperationConditionEvaluator.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9DFD1C040FFB009F3F32 /* ZZOperationConditionEvaluator.m */; };
+		11DB9E0F1C040FFB009F3F32 /* ZZOperationConditionResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9DFF1C040FFB009F3F32 /* ZZOperationConditionResult.m */; };
+		11DB9E101C040FFB009F3F32 /* ZZOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9E021C040FFB009F3F32 /* ZZOperationQueue.m */; };
+		11DB9E541C043B5F009F3F32 /* ZZGroupOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9E531C043B5F009F3F32 /* ZZGroupOperation.m */; };
+		11DB9E571C0441D3009F3F32 /* ZZNetworkIndicatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9E561C0441D3009F3F32 /* ZZNetworkIndicatorController.m */; };
+		11DB9E5A1C0448C3009F3F32 /* ZZDelayOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9E591C0448C3009F3F32 /* ZZDelayOperation.m */; };
+		11DB9E5D1C044BA9009F3F32 /* ZZTimeoutObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9E5C1C044BA9009F3F32 /* ZZTimeoutObserver.m */; };
+		11ECED221C0F00560045DCD2 /* ZZPostlyExclusive.m in Sources */ = {isa = PBXBuildFile; fileRef = 11ECED211C0F00560045DCD2 /* ZZPostlyExclusive.m */; };
+		11ECED251C0F01A20045DCD2 /* ZZNoCancelledDependencies.m in Sources */ = {isa = PBXBuildFile; fileRef = 11ECED241C0F01A20045DCD2 /* ZZNoCancelledDependencies.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		11DB9DC81C040F33009F3F32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11DB9DA61C040F33009F3F32 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11DB9DAD1C040F33009F3F32;
+			remoteInfo = ZZOperationExtension;
+		};
+		11DB9DD31C040F33009F3F32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11DB9DA61C040F33009F3F32 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11DB9DAD1C040F33009F3F32;
+			remoteInfo = ZZOperationExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		111E8F9A1C06F627009B4DFF /* ZZSilentCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZSilentCondition.h; path = Classes/ZZSilentCondition.h; sourceTree = "<group>"; };
+		111E8F9B1C06F627009B4DFF /* ZZSilentCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZSilentCondition.m; path = Classes/ZZSilentCondition.m; sourceTree = "<group>"; };
+		113D7A5F1C04503B00BD5720 /* ZZURLSessionTaskOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZURLSessionTaskOperation.h; path = Classes/ZZURLSessionTaskOperation.h; sourceTree = "<group>"; };
+		113D7A601C04503B00BD5720 /* ZZURLSessionTaskOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZURLSessionTaskOperation.m; path = Classes/ZZURLSessionTaskOperation.m; sourceTree = "<group>"; };
+		113D7A621C0453C700BD5720 /* ZZNetworkObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZNetworkObserver.h; path = Classes/ZZNetworkObserver.h; sourceTree = "<group>"; };
+		113D7A631C0453C700BD5720 /* ZZNetworkObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZNetworkObserver.m; path = Classes/ZZNetworkObserver.m; sourceTree = "<group>"; };
+		113D7A651C04549C00BD5720 /* ZZHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZHelper.h; sourceTree = "<group>"; };
+		113D7A661C04549C00BD5720 /* ZZHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZHelper.m; sourceTree = "<group>"; };
+		11DB9DAE1C040F33009F3F32 /* ZZOperationExtension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZZOperationExtension.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11DB9DB21C040F33009F3F32 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		11DB9DB41C040F33009F3F32 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		11DB9DB51C040F33009F3F32 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		11DB9DB71C040F33009F3F32 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		11DB9DB81C040F33009F3F32 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		11DB9DBB1C040F33009F3F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		11DB9DBD1C040F33009F3F32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11DB9DC01C040F33009F3F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		11DB9DC21C040F33009F3F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11DB9DC71C040F33009F3F32 /* ZZOperationExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZZOperationExtensionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11DB9DCB1C040F33009F3F32 /* ZZOperationExtensionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZOperationExtensionTests.m; sourceTree = "<group>"; };
+		11DB9DCD1C040F33009F3F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11DB9DD21C040F33009F3F32 /* ZZOperationExtensionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZZOperationExtensionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11DB9DD61C040F33009F3F32 /* ZZOperationExtensionUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZOperationExtensionUITests.m; sourceTree = "<group>"; };
+		11DB9DD81C040F33009F3F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11DB9DE51C040FFB009F3F32 /* NSArray+ZZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+ZZExtension.h"; path = "Classes/NSArray+ZZExtension.h"; sourceTree = "<group>"; };
+		11DB9DE61C040FFB009F3F32 /* NSArray+ZZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+ZZExtension.m"; path = "Classes/NSArray+ZZExtension.m"; sourceTree = "<group>"; };
+		11DB9DE71C040FFB009F3F32 /* NSError+ZZOperationErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSError+ZZOperationErrors.h"; path = "Classes/NSError+ZZOperationErrors.h"; sourceTree = "<group>"; };
+		11DB9DE81C040FFB009F3F32 /* NSError+ZZOperationErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSError+ZZOperationErrors.m"; path = "Classes/NSError+ZZOperationErrors.m"; sourceTree = "<group>"; };
+		11DB9DE91C040FFB009F3F32 /* NSLock+ZZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSLock+ZZExtension.h"; path = "Classes/NSLock+ZZExtension.h"; sourceTree = "<group>"; };
+		11DB9DEA1C040FFB009F3F32 /* NSLock+ZZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSLock+ZZExtension.m"; path = "Classes/NSLock+ZZExtension.m"; sourceTree = "<group>"; };
+		11DB9DEB1C040FFB009F3F32 /* NSOperation+ZZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSOperation+ZZExtension.h"; path = "Classes/NSOperation+ZZExtension.h"; sourceTree = "<group>"; };
+		11DB9DEC1C040FFB009F3F32 /* NSOperation+ZZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSOperation+ZZExtension.m"; path = "Classes/NSOperation+ZZExtension.m"; sourceTree = "<group>"; };
+		11DB9DED1C040FFB009F3F32 /* ZZBlockObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZBlockObserver.h; path = Classes/ZZBlockObserver.h; sourceTree = "<group>"; };
+		11DB9DEE1C040FFB009F3F32 /* ZZBlockObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZBlockObserver.m; path = Classes/ZZBlockObserver.m; sourceTree = "<group>"; };
+		11DB9DEF1C040FFB009F3F32 /* ZZBlockOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZBlockOperation.h; path = Classes/ZZBlockOperation.h; sourceTree = "<group>"; };
+		11DB9DF01C040FFB009F3F32 /* ZZBlockOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZBlockOperation.m; path = Classes/ZZBlockOperation.m; sourceTree = "<group>"; };
+		11DB9DF11C040FFB009F3F32 /* ZZExclusivityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZExclusivityController.h; path = Classes/ZZExclusivityController.h; sourceTree = "<group>"; };
+		11DB9DF21C040FFB009F3F32 /* ZZExclusivityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZExclusivityController.m; path = Classes/ZZExclusivityController.m; sourceTree = "<group>"; };
+		11DB9DF51C040FFB009F3F32 /* ZZMutuallyExclusive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZMutuallyExclusive.h; path = Classes/ZZMutuallyExclusive.h; sourceTree = "<group>"; };
+		11DB9DF61C040FFB009F3F32 /* ZZMutuallyExclusive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZMutuallyExclusive.m; path = Classes/ZZMutuallyExclusive.m; sourceTree = "<group>"; };
+		11DB9DF71C040FFB009F3F32 /* ZZNegatedCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZNegatedCondition.h; path = Classes/ZZNegatedCondition.h; sourceTree = "<group>"; };
+		11DB9DF81C040FFB009F3F32 /* ZZNegatedCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZNegatedCondition.m; path = Classes/ZZNegatedCondition.m; sourceTree = "<group>"; };
+		11DB9DF91C040FFB009F3F32 /* ZZOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZOperation.h; path = Classes/ZZOperation.h; sourceTree = "<group>"; };
+		11DB9DFA1C040FFB009F3F32 /* ZZOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZOperation.m; path = Classes/ZZOperation.m; sourceTree = "<group>"; };
+		11DB9DFB1C040FFB009F3F32 /* ZZOperationCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZOperationCondition.h; path = Classes/ZZOperationCondition.h; sourceTree = "<group>"; };
+		11DB9DFC1C040FFB009F3F32 /* ZZOperationConditionEvaluator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZOperationConditionEvaluator.h; path = Classes/ZZOperationConditionEvaluator.h; sourceTree = "<group>"; };
+		11DB9DFD1C040FFB009F3F32 /* ZZOperationConditionEvaluator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZOperationConditionEvaluator.m; path = Classes/ZZOperationConditionEvaluator.m; sourceTree = "<group>"; };
+		11DB9DFE1C040FFB009F3F32 /* ZZOperationConditionResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZOperationConditionResult.h; path = Classes/ZZOperationConditionResult.h; sourceTree = "<group>"; };
+		11DB9DFF1C040FFB009F3F32 /* ZZOperationConditionResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZOperationConditionResult.m; path = Classes/ZZOperationConditionResult.m; sourceTree = "<group>"; };
+		11DB9E001C040FFB009F3F32 /* ZZOperationObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZOperationObserver.h; path = Classes/ZZOperationObserver.h; sourceTree = "<group>"; };
+		11DB9E011C040FFB009F3F32 /* ZZOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZOperationQueue.h; path = Classes/ZZOperationQueue.h; sourceTree = "<group>"; };
+		11DB9E021C040FFB009F3F32 /* ZZOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZOperationQueue.m; path = Classes/ZZOperationQueue.m; sourceTree = "<group>"; };
+		11DB9E121C041089009F3F32 /* ZZOperationExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZZOperationExtension.h; path = Classes/ZZOperationExtension.h; sourceTree = "<group>"; };
+		11DB9E521C043B5F009F3F32 /* ZZGroupOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZGroupOperation.h; path = Classes/ZZGroupOperation.h; sourceTree = "<group>"; };
+		11DB9E531C043B5F009F3F32 /* ZZGroupOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZGroupOperation.m; path = Classes/ZZGroupOperation.m; sourceTree = "<group>"; };
+		11DB9E551C0441D2009F3F32 /* ZZNetworkIndicatorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZNetworkIndicatorController.h; path = Classes/ZZNetworkIndicatorController.h; sourceTree = "<group>"; };
+		11DB9E561C0441D3009F3F32 /* ZZNetworkIndicatorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZNetworkIndicatorController.m; path = Classes/ZZNetworkIndicatorController.m; sourceTree = "<group>"; };
+		11DB9E581C0448C3009F3F32 /* ZZDelayOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZDelayOperation.h; path = Classes/ZZDelayOperation.h; sourceTree = "<group>"; };
+		11DB9E591C0448C3009F3F32 /* ZZDelayOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZDelayOperation.m; path = Classes/ZZDelayOperation.m; sourceTree = "<group>"; };
+		11DB9E5B1C044BA9009F3F32 /* ZZTimeoutObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZTimeoutObserver.h; path = Classes/ZZTimeoutObserver.h; sourceTree = "<group>"; };
+		11DB9E5C1C044BA9009F3F32 /* ZZTimeoutObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZTimeoutObserver.m; path = Classes/ZZTimeoutObserver.m; sourceTree = "<group>"; };
+		11ECED201C0F00560045DCD2 /* ZZPostlyExclusive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZPostlyExclusive.h; path = Classes/ZZPostlyExclusive.h; sourceTree = "<group>"; };
+		11ECED211C0F00560045DCD2 /* ZZPostlyExclusive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZPostlyExclusive.m; path = Classes/ZZPostlyExclusive.m; sourceTree = "<group>"; };
+		11ECED231C0F01A20045DCD2 /* ZZNoCancelledDependencies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZNoCancelledDependencies.h; path = Classes/ZZNoCancelledDependencies.h; sourceTree = "<group>"; };
+		11ECED241C0F01A20045DCD2 /* ZZNoCancelledDependencies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZNoCancelledDependencies.m; path = Classes/ZZNoCancelledDependencies.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11DB9DAB1C040F33009F3F32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11DB9DC41C040F33009F3F32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11DB9DCF1C040F33009F3F32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11DB9DA51C040F33009F3F32 = {
+			isa = PBXGroup;
+			children = (
+				11DB9DB01C040F33009F3F32 /* ZZOperationExtension */,
+				11DB9DCA1C040F33009F3F32 /* ZZOperationExtensionTests */,
+				11DB9DD51C040F33009F3F32 /* ZZOperationExtensionUITests */,
+				11DB9DAF1C040F33009F3F32 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		11DB9DAF1C040F33009F3F32 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11DB9DAE1C040F33009F3F32 /* ZZOperationExtension.app */,
+				11DB9DC71C040F33009F3F32 /* ZZOperationExtensionTests.xctest */,
+				11DB9DD21C040F33009F3F32 /* ZZOperationExtensionUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		11DB9DB01C040F33009F3F32 /* ZZOperationExtension */ = {
+			isa = PBXGroup;
+			children = (
+				11DB9DE41C040F3C009F3F32 /* ZZOperation */,
+				11DB9DB41C040F33009F3F32 /* AppDelegate.h */,
+				11DB9DB51C040F33009F3F32 /* AppDelegate.m */,
+				11DB9DB71C040F33009F3F32 /* ViewController.h */,
+				11DB9DB81C040F33009F3F32 /* ViewController.m */,
+				113D7A651C04549C00BD5720 /* ZZHelper.h */,
+				113D7A661C04549C00BD5720 /* ZZHelper.m */,
+				11DB9DBA1C040F33009F3F32 /* Main.storyboard */,
+				11DB9DBD1C040F33009F3F32 /* Assets.xcassets */,
+				11DB9DBF1C040F33009F3F32 /* LaunchScreen.storyboard */,
+				11DB9DC21C040F33009F3F32 /* Info.plist */,
+				11DB9DB11C040F33009F3F32 /* Supporting Files */,
+			);
+			path = ZZOperationExtension;
+			sourceTree = "<group>";
+		};
+		11DB9DB11C040F33009F3F32 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				11DB9DB21C040F33009F3F32 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		11DB9DCA1C040F33009F3F32 /* ZZOperationExtensionTests */ = {
+			isa = PBXGroup;
+			children = (
+				11DB9DCB1C040F33009F3F32 /* ZZOperationExtensionTests.m */,
+				11DB9DCD1C040F33009F3F32 /* Info.plist */,
+			);
+			path = ZZOperationExtensionTests;
+			sourceTree = "<group>";
+		};
+		11DB9DD51C040F33009F3F32 /* ZZOperationExtensionUITests */ = {
+			isa = PBXGroup;
+			children = (
+				11DB9DD61C040F33009F3F32 /* ZZOperationExtensionUITests.m */,
+				11DB9DD81C040F33009F3F32 /* Info.plist */,
+			);
+			path = ZZOperationExtensionUITests;
+			sourceTree = "<group>";
+		};
+		11DB9DE41C040F3C009F3F32 /* ZZOperation */ = {
+			isa = PBXGroup;
+			children = (
+				11DB9DE51C040FFB009F3F32 /* NSArray+ZZExtension.h */,
+				11DB9DE61C040FFB009F3F32 /* NSArray+ZZExtension.m */,
+				11DB9DE71C040FFB009F3F32 /* NSError+ZZOperationErrors.h */,
+				11DB9DE81C040FFB009F3F32 /* NSError+ZZOperationErrors.m */,
+				11DB9DE91C040FFB009F3F32 /* NSLock+ZZExtension.h */,
+				11DB9DEA1C040FFB009F3F32 /* NSLock+ZZExtension.m */,
+				11DB9DEB1C040FFB009F3F32 /* NSOperation+ZZExtension.h */,
+				11DB9DEC1C040FFB009F3F32 /* NSOperation+ZZExtension.m */,
+				11DB9DED1C040FFB009F3F32 /* ZZBlockObserver.h */,
+				11DB9DEE1C040FFB009F3F32 /* ZZBlockObserver.m */,
+				11DB9DEF1C040FFB009F3F32 /* ZZBlockOperation.h */,
+				11DB9DF01C040FFB009F3F32 /* ZZBlockOperation.m */,
+				11DB9E581C0448C3009F3F32 /* ZZDelayOperation.h */,
+				11DB9E591C0448C3009F3F32 /* ZZDelayOperation.m */,
+				11DB9E521C043B5F009F3F32 /* ZZGroupOperation.h */,
+				11DB9E531C043B5F009F3F32 /* ZZGroupOperation.m */,
+				11DB9DF11C040FFB009F3F32 /* ZZExclusivityController.h */,
+				11DB9DF21C040FFB009F3F32 /* ZZExclusivityController.m */,
+				11DB9DF51C040FFB009F3F32 /* ZZMutuallyExclusive.h */,
+				11DB9DF61C040FFB009F3F32 /* ZZMutuallyExclusive.m */,
+				11ECED231C0F01A20045DCD2 /* ZZNoCancelledDependencies.h */,
+				11ECED241C0F01A20045DCD2 /* ZZNoCancelledDependencies.m */,
+				11ECED201C0F00560045DCD2 /* ZZPostlyExclusive.h */,
+				11ECED211C0F00560045DCD2 /* ZZPostlyExclusive.m */,
+				11DB9DF71C040FFB009F3F32 /* ZZNegatedCondition.h */,
+				11DB9DF81C040FFB009F3F32 /* ZZNegatedCondition.m */,
+				11DB9E551C0441D2009F3F32 /* ZZNetworkIndicatorController.h */,
+				11DB9E561C0441D3009F3F32 /* ZZNetworkIndicatorController.m */,
+				113D7A621C0453C700BD5720 /* ZZNetworkObserver.h */,
+				113D7A631C0453C700BD5720 /* ZZNetworkObserver.m */,
+				11DB9DF91C040FFB009F3F32 /* ZZOperation.h */,
+				11DB9DFA1C040FFB009F3F32 /* ZZOperation.m */,
+				11DB9DFB1C040FFB009F3F32 /* ZZOperationCondition.h */,
+				11DB9DFC1C040FFB009F3F32 /* ZZOperationConditionEvaluator.h */,
+				11DB9DFD1C040FFB009F3F32 /* ZZOperationConditionEvaluator.m */,
+				11DB9DFE1C040FFB009F3F32 /* ZZOperationConditionResult.h */,
+				11DB9DFF1C040FFB009F3F32 /* ZZOperationConditionResult.m */,
+				11DB9E001C040FFB009F3F32 /* ZZOperationObserver.h */,
+				11DB9E011C040FFB009F3F32 /* ZZOperationQueue.h */,
+				11DB9E021C040FFB009F3F32 /* ZZOperationQueue.m */,
+				11DB9E121C041089009F3F32 /* ZZOperationExtension.h */,
+				111E8F9A1C06F627009B4DFF /* ZZSilentCondition.h */,
+				111E8F9B1C06F627009B4DFF /* ZZSilentCondition.m */,
+				11DB9E5B1C044BA9009F3F32 /* ZZTimeoutObserver.h */,
+				11DB9E5C1C044BA9009F3F32 /* ZZTimeoutObserver.m */,
+				113D7A5F1C04503B00BD5720 /* ZZURLSessionTaskOperation.h */,
+				113D7A601C04503B00BD5720 /* ZZURLSessionTaskOperation.m */,
+			);
+			name = ZZOperation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		11DB9DAD1C040F33009F3F32 /* ZZOperationExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11DB9DDB1C040F33009F3F32 /* Build configuration list for PBXNativeTarget "ZZOperationExtension" */;
+			buildPhases = (
+				11DB9DAA1C040F33009F3F32 /* Sources */,
+				11DB9DAB1C040F33009F3F32 /* Frameworks */,
+				11DB9DAC1C040F33009F3F32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZZOperationExtension;
+			productName = ZZOperationExtension;
+			productReference = 11DB9DAE1C040F33009F3F32 /* ZZOperationExtension.app */;
+			productType = "com.apple.product-type.application";
+		};
+		11DB9DC61C040F33009F3F32 /* ZZOperationExtensionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11DB9DDE1C040F33009F3F32 /* Build configuration list for PBXNativeTarget "ZZOperationExtensionTests" */;
+			buildPhases = (
+				11DB9DC31C040F33009F3F32 /* Sources */,
+				11DB9DC41C040F33009F3F32 /* Frameworks */,
+				11DB9DC51C040F33009F3F32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11DB9DC91C040F33009F3F32 /* PBXTargetDependency */,
+			);
+			name = ZZOperationExtensionTests;
+			productName = ZZOperationExtensionTests;
+			productReference = 11DB9DC71C040F33009F3F32 /* ZZOperationExtensionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		11DB9DD11C040F33009F3F32 /* ZZOperationExtensionUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11DB9DE11C040F33009F3F32 /* Build configuration list for PBXNativeTarget "ZZOperationExtensionUITests" */;
+			buildPhases = (
+				11DB9DCE1C040F33009F3F32 /* Sources */,
+				11DB9DCF1C040F33009F3F32 /* Frameworks */,
+				11DB9DD01C040F33009F3F32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11DB9DD41C040F33009F3F32 /* PBXTargetDependency */,
+			);
+			name = ZZOperationExtensionUITests;
+			productName = ZZOperationExtensionUITests;
+			productReference = 11DB9DD21C040F33009F3F32 /* ZZOperationExtensionUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		11DB9DA61C040F33009F3F32 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = sablib;
+				TargetAttributes = {
+					11DB9DAD1C040F33009F3F32 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					11DB9DC61C040F33009F3F32 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = 11DB9DAD1C040F33009F3F32;
+					};
+					11DB9DD11C040F33009F3F32 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = 11DB9DAD1C040F33009F3F32;
+					};
+				};
+			};
+			buildConfigurationList = 11DB9DA91C040F33009F3F32 /* Build configuration list for PBXProject "ZZOperationExtension" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 11DB9DA51C040F33009F3F32;
+			productRefGroup = 11DB9DAF1C040F33009F3F32 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				11DB9DAD1C040F33009F3F32 /* ZZOperationExtension */,
+				11DB9DC61C040F33009F3F32 /* ZZOperationExtensionTests */,
+				11DB9DD11C040F33009F3F32 /* ZZOperationExtensionUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		11DB9DAC1C040F33009F3F32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11DB9DC11C040F33009F3F32 /* LaunchScreen.storyboard in Resources */,
+				11DB9DBE1C040F33009F3F32 /* Assets.xcassets in Resources */,
+				11DB9DBC1C040F33009F3F32 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11DB9DC51C040F33009F3F32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11DB9DD01C040F33009F3F32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11DB9DAA1C040F33009F3F32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11DB9E061C040FFB009F3F32 /* NSOperation+ZZExtension.m in Sources */,
+				113D7A671C04549C00BD5720 /* ZZHelper.m in Sources */,
+				11DB9E0E1C040FFB009F3F32 /* ZZOperationConditionEvaluator.m in Sources */,
+				11DB9E0F1C040FFB009F3F32 /* ZZOperationConditionResult.m in Sources */,
+				11DB9E091C040FFB009F3F32 /* ZZExclusivityController.m in Sources */,
+				11DB9E081C040FFB009F3F32 /* ZZBlockOperation.m in Sources */,
+				11DB9E571C0441D3009F3F32 /* ZZNetworkIndicatorController.m in Sources */,
+				11ECED221C0F00560045DCD2 /* ZZPostlyExclusive.m in Sources */,
+				11DB9E541C043B5F009F3F32 /* ZZGroupOperation.m in Sources */,
+				111E8F9C1C06F627009B4DFF /* ZZSilentCondition.m in Sources */,
+				11DB9E031C040FFB009F3F32 /* NSArray+ZZExtension.m in Sources */,
+				11DB9DB91C040F33009F3F32 /* ViewController.m in Sources */,
+				113D7A611C04503B00BD5720 /* ZZURLSessionTaskOperation.m in Sources */,
+				11DB9E5A1C0448C3009F3F32 /* ZZDelayOperation.m in Sources */,
+				11DB9E071C040FFB009F3F32 /* ZZBlockObserver.m in Sources */,
+				11ECED251C0F01A20045DCD2 /* ZZNoCancelledDependencies.m in Sources */,
+				11DB9E5D1C044BA9009F3F32 /* ZZTimeoutObserver.m in Sources */,
+				113D7A641C0453C700BD5720 /* ZZNetworkObserver.m in Sources */,
+				11DB9DB61C040F33009F3F32 /* AppDelegate.m in Sources */,
+				11DB9E0C1C040FFB009F3F32 /* ZZNegatedCondition.m in Sources */,
+				11DB9E051C040FFB009F3F32 /* NSLock+ZZExtension.m in Sources */,
+				11DB9E041C040FFB009F3F32 /* NSError+ZZOperationErrors.m in Sources */,
+				11DB9E0B1C040FFB009F3F32 /* ZZMutuallyExclusive.m in Sources */,
+				11DB9E0D1C040FFB009F3F32 /* ZZOperation.m in Sources */,
+				11DB9E101C040FFB009F3F32 /* ZZOperationQueue.m in Sources */,
+				11DB9DB31C040F33009F3F32 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11DB9DC31C040F33009F3F32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11DB9DCC1C040F33009F3F32 /* ZZOperationExtensionTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11DB9DCE1C040F33009F3F32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11DB9DD71C040F33009F3F32 /* ZZOperationExtensionUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		11DB9DC91C040F33009F3F32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11DB9DAD1C040F33009F3F32 /* ZZOperationExtension */;
+			targetProxy = 11DB9DC81C040F33009F3F32 /* PBXContainerItemProxy */;
+		};
+		11DB9DD41C040F33009F3F32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11DB9DAD1C040F33009F3F32 /* ZZOperationExtension */;
+			targetProxy = 11DB9DD31C040F33009F3F32 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		11DB9DBA1C040F33009F3F32 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11DB9DBB1C040F33009F3F32 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		11DB9DBF1C040F33009F3F32 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11DB9DC01C040F33009F3F32 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		11DB9DD91C040F33009F3F32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		11DB9DDA1C040F33009F3F32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		11DB9DDC1C040F33009F3F32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ZZOperationExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.sablib.ZZOperationExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		11DB9DDD1C040F33009F3F32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ZZOperationExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.sablib.ZZOperationExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		11DB9DDF1C040F33009F3F32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ZZOperationExtensionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.sablib.ZZOperationExtensionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZZOperationExtension.app/ZZOperationExtension";
+			};
+			name = Debug;
+		};
+		11DB9DE01C040F33009F3F32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ZZOperationExtensionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.sablib.ZZOperationExtensionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZZOperationExtension.app/ZZOperationExtension";
+			};
+			name = Release;
+		};
+		11DB9DE21C040F33009F3F32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ZZOperationExtensionUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.sablib.ZZOperationExtensionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ZZOperationExtension;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		11DB9DE31C040F33009F3F32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ZZOperationExtensionUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.sablib.ZZOperationExtensionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ZZOperationExtension;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11DB9DA91C040F33009F3F32 /* Build configuration list for PBXProject "ZZOperationExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11DB9DD91C040F33009F3F32 /* Debug */,
+				11DB9DDA1C040F33009F3F32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11DB9DDB1C040F33009F3F32 /* Build configuration list for PBXNativeTarget "ZZOperationExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11DB9DDC1C040F33009F3F32 /* Debug */,
+				11DB9DDD1C040F33009F3F32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11DB9DDE1C040F33009F3F32 /* Build configuration list for PBXNativeTarget "ZZOperationExtensionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11DB9DDF1C040F33009F3F32 /* Debug */,
+				11DB9DE01C040F33009F3F32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11DB9DE11C040F33009F3F32 /* Build configuration list for PBXNativeTarget "ZZOperationExtensionUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11DB9DE21C040F33009F3F32 /* Debug */,
+				11DB9DE31C040F33009F3F32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 11DB9DA61C040F33009F3F32 /* Project object */;
+}
