@@ -11,7 +11,10 @@
 
 @interface ZZGroupOperation : ZZOperation <ZZOperationQueueDelegate>
 
+@property (nonatomic, assign) BOOL isSerial;
+
 - (instancetype)initWithOperations:(NSArray<NSOperation *> *)operations;
+- (instancetype)initWithSerialOperations:(NSArray<NSOperation *> *)operations;
 
 - (void)aggregateError:(NSError *)error;
 - (void)operation:(NSOperation *)operation didFinishedWithErrors:(NSArray<NSError *> *)errors;

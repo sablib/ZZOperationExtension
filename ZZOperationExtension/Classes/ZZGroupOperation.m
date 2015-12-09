@@ -10,6 +10,8 @@
 
 @interface ZZGroupOperation ()
 
+@property (nonatomic, assign) BOOL isSerail;
+
 @property (nonatomic, strong) ZZOperationQueue *internalQueue;
 @property (nonatomic, strong) NSBlockOperation *startingOperation;
 @property (nonatomic, strong) NSBlockOperation *finishingOperation;
@@ -22,6 +24,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
+        self.isSerial = NO;
         self.internalQueue = [[ZZOperationQueue alloc] init];
         self.startingOperation = [NSBlockOperation blockOperationWithBlock:^{}];
         self.finishingOperation = [NSBlockOperation blockOperationWithBlock:^{}];
@@ -42,14 +45,29 @@
     return self;
 }
 
+- (instancetype)initWithSerialOperations:(NSArray<NSOperation *> *)operations {
+    if (self = [self init]) {
+        self.isSerial = YES;
+        self.internalQueue.suspended = YES;
+        self.internalQueue.delegate = self;
+        [self.internalQueue addOperation:self.startingOperation];
+        NSOperation *lastOp = self.startingOperation;
+        for (NSOperation *op in operations) {
+            [op addDependency:lastOp];
+            [self.internalQueue addOperation:op];
+        }
+    }
+    return self;
+}
+
 - (void)cancel {
     [self.internalQueue cancelAllOperations];
     [super cancel];
 }
 
 - (void)execute {
+    [self addOperation:self.finishingOperation];
     self.internalQueue.suspended = NO;
-    [self.internalQueue addOperation:self.finishingOperation];
 }
 
 - (void)aggregateError:(NSError *)error {
@@ -57,6 +75,12 @@
 }
 
 - (void)addOperation:(NSOperation *)operation {
+    if (self.isSerial) {
+        NSOperation *lastOp = self.internalQueue.operations.lastObject;
+        if (lastOp) {
+            [operation addDependency:lastOp];
+        }
+    }
     [self.internalQueue addOperation:operation];
 }
 
