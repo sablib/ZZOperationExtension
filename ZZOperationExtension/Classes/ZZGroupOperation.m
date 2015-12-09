@@ -50,11 +50,9 @@
         self.isSerial = YES;
         self.internalQueue.suspended = YES;
         self.internalQueue.delegate = self;
-        [self.internalQueue addOperation:self.startingOperation];
-        NSOperation *lastOp = self.startingOperation;
+        [self addOperation:self.startingOperation];
         for (NSOperation *op in operations) {
-            [op addDependency:lastOp];
-            [self.internalQueue addOperation:op];
+            [self addOperation:op];
         }
     }
     return self;
