@@ -30,7 +30,7 @@
 }
 
 - (NSString *)name {
-    return [self.object identifier];
+    return [NSString stringWithFormat:@"PostlyExclusive<%@>", [self.object identifier]];
 }
 
 @end
