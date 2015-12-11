@@ -54,13 +54,6 @@
     return [NSSet setWithObjects:@"state", nil];
 }
 
-#ifdef DEBUG
-- (void)dealloc {
-    NSLog(@"%@ dealloced.", NSStringFromClass([self class]));
-}
-#else
-#endif
-
 - (instancetype)init {
     if (self = [super init]) {
         _state = ZZOperationStateInitialized;

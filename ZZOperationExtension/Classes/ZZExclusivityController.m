@@ -56,7 +56,11 @@
 - (void)noqueue_addOperation:(ZZOperation *)operation category:(NSString *)category {
     NSArray<ZZOperation *> *operationsWithThisCategories = self.operations[category] ?: @[];
     
-    if ([operation isKindOfClass:[ZZPostlyExclusive class]]) {
+    NSArray *conditions = operation.conditions;
+    NSArray *postlyExclusiveConditions = [conditions zz_filter:^BOOL(id each) {
+        return [each isKindOfClass:[ZZPostlyExclusive class]];
+    }];
+    if (postlyExclusiveConditions.count > 0) {
         if (operationsWithThisCategories.count) {
             [operationsWithThisCategories makeObjectsPerformSelector:@selector(cancel)];
         }
