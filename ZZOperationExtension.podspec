@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ZZOperationExtension"
-  s.version      = "0.2.9"
+  s.version      = "0.2.10"
   s.summary      = "An extension to NSOperation."
   s.homepage     = "https://github.com/sablib/ZZOperationExtension"
   s.license      = { :type => "MIT", :file => "LICENSE" }

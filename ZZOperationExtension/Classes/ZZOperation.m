@@ -198,11 +198,6 @@
     }
 }
 
-- (void)cancel {
-    [super cancel];
-    [self finish];
-}
-
 - (void)produceOperation:(NSOperation *)operation {
     for (id<ZZOperationObserver> observer in self.observers) {
         [observer operation:self didProduceOperation:operation];
