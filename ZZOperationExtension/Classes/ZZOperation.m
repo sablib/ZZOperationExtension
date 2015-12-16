@@ -37,7 +37,7 @@
     static dispatch_queue_t queue;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        queue = dispatch_queue_create("ZZOperation.queue", DISPATCH_QUEUE_PRIORITY_DEFAULT);
+        queue = dispatch_queue_create("ZZOperation.queue", DISPATCH_QUEUE_CONCURRENT);
     });
     return queue;
 }
