@@ -96,7 +96,12 @@
 }
 
 - (void)evaluateConditions {
-    NSAssert(self.state == ZZOperationStatePending && !self.isCancelled, @"evaluateConditions was called out-of-order");
+    if (self.isCancelled) {
+        self.state = ZZOperationStateReady;
+        return;
+    }
+    
+    NSAssert(self.state == ZZOperationStatePending, @"evaluateConditions was called out-of-order");
     
     self.state = ZZOperationStateEvaluatingConditions;
     [ZZOperationConditionEvaluator evaluateWithConditions:self.conditions operation:self completion:^(NSArray<NSError *> *failures) {
@@ -125,14 +130,6 @@
 
 - (void)willEnqueue {
     self.state = ZZOperationStatePending;
-}
-
-- (void)start {
-    [super start];
-    
-    if (self.isCancelled) {
-        [self finish];
-    }
 }
 
 - (void)main {
@@ -193,9 +190,8 @@
 - (void)cancelWithError:(NSError *)error {
     if (error) {
         [self.internalErrors addObject:error];
-    } else {
-        [self cancel];
     }
+    [self cancel];
 }
 
 - (void)produceOperation:(NSOperation *)operation {
@@ -214,7 +210,7 @@
     if (_state != state) {
         [self willChangeValueForKey:@"state"];
         [self.stateLock withCriticalScope:^id{
-            NSAssert(_state & state || (_state == ZZOperationStatePending && state == ZZOperationStateReady && self.conditions.count == 0), @"perform invalid state transition");
+            NSAssert(_state & state || (_state == ZZOperationStatePending && state == ZZOperationStateReady && self.conditions.count == 0) || state == ZZOperationStateFinishing, @"perform invalid state transition");
             _state = state;
             return nil;
         }];
