@@ -63,7 +63,10 @@
     [op addObserver:ob];
     [op1 addObserver:ob];
     
-    [op1 addDependency:op];
+    [op addCondition:[[ZZMutuallyExclusive alloc] initWithClass:[UIViewController class]]];
+    [op1 addCondition:[[ZZMutuallyExclusive alloc] initWithClass:[UIViewController class]]];
+    
+//    [op1 addDependency:op];
     
     ZZGroupOperation *groups = [[ZZGroupOperation alloc] initWithOperations:@[op, op1]];
     

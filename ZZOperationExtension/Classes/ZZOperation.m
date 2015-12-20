@@ -22,16 +22,17 @@
 @property (nonatomic, strong) NSMutableArray<NSError *> *internalErrors;
 
 @property (nonatomic, assign) BOOL hasFinishedAlready;
+@property (nonatomic, assign) BOOL hasFinishEvaluatingCondtions;
+
+@property (nonatomic, readwrite, getter=isExecuting) BOOL executing;
+@property (nonatomic, readwrite, getter=isFinished) BOOL finished;
 
 @end
 
 @implementation ZZOperation
 
-@synthesize state = _state;
-
-@dynamic ready;
-@dynamic finished;
-@dynamic executing;
+@synthesize executing = _executing;
+@synthesize finished = _finished;
 
 + (dispatch_queue_t)sharedQueue {
     static dispatch_queue_t queue;
@@ -43,100 +44,83 @@
 }
 
 + (NSSet *)keyPathsForValuesAffectingIsReady {
-    return [NSSet setWithObjects:@"state", nil];
+    return [NSSet setWithObjects:@"state", @"hasFinishEvaluatingCondtions", nil];
 }
 
 + (NSSet *)keyPathsForValuesAffectingIsFinished {
-    return [NSSet setWithObjects:@"state", nil];
+    return [NSSet setWithObjects:@"finished", nil];
 }
 
 + (NSSet *)keyPathsForValuesAffectingIsExecuting {
-    return [NSSet setWithObjects:@"state", nil];
+    return [NSSet setWithObjects:@"executing", nil];
 }
 
 - (instancetype)init {
     if (self = [super init]) {
-        _state = ZZOperationStateInitialized;
-        self.stateLock = [[NSLock alloc] init];
-        self.conditions = @[].mutableCopy;
-        self.observers = @[].mutableCopy;
-        self.internalErrors = @[].mutableCopy;
-        self.hasFinishedAlready = NO;
+        _conditions = @[].mutableCopy;
+        _observers = @[].mutableCopy;
+        _internalErrors = @[].mutableCopy;
+        _hasFinishedAlready = NO;
+        _hasFinishEvaluatingCondtions = NO;
     }
     return self;
 }
 
 - (BOOL)isReady {
-    switch (self.state) {
-        case ZZOperationStateInitialized:
-            return self.cancelled;
-        case ZZOperationStatePending:
-            if (self.isCancelled) {
-                return YES;
-            } else if (self.conditions.count == 0) {
-                self.state = ZZOperationStateReady;
-                return YES;
-            } else if ([super isReady]) {
-                [self evaluateConditions];
-            }
-            return NO;
-        case ZZOperationStateReady:
-            return super.isReady || self.cancelled;
-        default:
-            return NO;
+    if (![super isReady]) {
+        return self.isCancelled;
+    } else if (self.hasFinishEvaluatingCondtions) {
+        return YES;
+    } else {
+        return [self evaluateConditions];
     }
 }
 
-- (BOOL)isExecuting {
-    return self.state == ZZOperationStateExecuting;
-}
-
-- (BOOL)isFinished {
-    return self.state == ZZOperationStateFinished;
-}
-
-- (void)evaluateConditions {
+- (BOOL)evaluateConditions {
     if (self.isCancelled) {
-        self.state = ZZOperationStateReady;
-        return;
+        return YES;
     }
     
-    NSAssert(self.state == ZZOperationStatePending, @"evaluateConditions was called out-of-order");
-    
-    self.state = ZZOperationStateEvaluatingConditions;
-    [ZZOperationConditionEvaluator evaluateWithConditions:self.conditions operation:self completion:^(NSArray<NSError *> *failures) {
-        [self.internalErrors addObjectsFromArray:failures];
-        self.state = ZZOperationStateReady;
-    }];
+    if (self.conditions.count == 0) {
+        self.hasFinishEvaluatingCondtions = YES;
+    } else {
+        [ZZOperationConditionEvaluator evaluateWithConditions:self.conditions operation:self completion:^(NSArray<NSError *> *failures) {
+            [self.internalErrors addObjectsFromArray:failures];
+            if (failures.count) {
+                self.hasFinishEvaluatingCondtions = NO;
+            } else {
+                self.hasFinishEvaluatingCondtions = YES;
+            }
+        }];
+    }
+    return self.hasFinishEvaluatingCondtions;
 }
 
 - (void)addCondition:(id<ZZOperationCondition>)condition {
-    NSAssert(self.state < ZZOperationStateEvaluatingConditions, @"cannot add condition after evaluatingConditions");
+    NSAssert(self.hasFinishEvaluatingCondtions == NO, @"cannot add condition after evaluatingConditions");
     
     [self.conditions addObject:condition];
 }
 
 - (void)addObserver:(id<ZZOperationObserver>)observer {
-    NSAssert(self.state < ZZOperationStateExecuting, @"cannot add observer after execute");
+    NSAssert(self.isExecuting == NO, @"cannot add observer after execute");
     
     [self.observers addObject:observer];
 }
 
 - (void)addDependency:(NSOperation *)op {
-    NSAssert(self.state < ZZOperationStateExecuting, @"cannot add dependency after execute");
+    NSAssert(self.isExecuting == NO, @"cannot add dependency after execute");
     
     [super addDependency:op];
 }
 
 - (void)willEnqueue {
-    self.state = ZZOperationStatePending;
+
 }
 
 - (void)main {
-    NSAssert(self.state == ZZOperationStateReady, @"This operation must be performed on a operation queue");
-    
     if (self.internalErrors.count == 0 && !self.isCancelled) {
-        self.state = ZZOperationStateExecuting;
+        self.executing = YES;
         
         for (id<ZZOperationObserver> observer in self.observers) {
             [observer operationDidStart:self];
@@ -162,7 +146,6 @@
     dispatch_async([ZZOperation sharedQueue], ^{
         if (!self.hasFinishedAlready) {
             self.hasFinishedAlready = YES;
-            self.state = ZZOperationStateFinishing;
             
             NSArray<NSError *> *combinedErrors = [self.internalErrors.copy arrayByAddingObjectsFromArray:errors];
             [self finished:combinedErrors];
@@ -170,7 +153,8 @@
             for (id<ZZOperationObserver> observer in self.observers) {
                 [observer operationDidFinished:self withErrors:combinedErrors];
             }
-            self.state = ZZOperationStateFinished;
+            
+            self.finished = YES;
         }
     });
 }
@@ -197,24 +181,6 @@
 - (void)produceOperation:(NSOperation *)operation {
     for (id<ZZOperationObserver> observer in self.observers) {
         [observer operation:self didProduceOperation:operation];
-    }
-}
-
-- (ZZOperationState)state {
-    return [[self.stateLock withCriticalScope:^id{
-        return @(_state);
-    }] integerValue];
-}
-
-- (void)setState:(ZZOperationState)state {
-    if (_state != state) {
-        [self willChangeValueForKey:@"state"];
-        [self.stateLock withCriticalScope:^id{
-            NSAssert(_state & state || (_state == ZZOperationStatePending && state == ZZOperationStateReady && self.conditions.count == 0) || state == ZZOperationStateFinishing, @"perform invalid state transition");
-            _state = state;
-            return nil;
-        }];
-        [self didChangeValueForKey:@"state"];
     }
 }
 
