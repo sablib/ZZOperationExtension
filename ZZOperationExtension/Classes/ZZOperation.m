@@ -154,6 +154,7 @@
                 [observer operationDidFinished:self withErrors:combinedErrors];
             }
             
+            self.executing = NO;
             self.finished = YES;
         }
     });
