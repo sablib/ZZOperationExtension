@@ -75,6 +75,13 @@
     if ([self.delegate respondsToSelector:@selector(operationQueue:willAddOperation:)]) {
         [self.delegate operationQueue:self willAddOperation:op];
     }
+    
+    if (self.isSerial) {
+        NSOperation *lastOperationInQueue = self.operations.lastObject;
+        if (lastOperationInQueue) {
+            [op addDependency:lastOperationInQueue];
+        }
+    }
     [super addOperation:op];
 }
 

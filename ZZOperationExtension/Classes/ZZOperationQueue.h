@@ -22,6 +22,7 @@
 
 @interface ZZOperationQueue : NSOperationQueue
 
+@property (nonatomic, assign) BOOL isSerial;
 @property (nonatomic, weak) id<ZZOperationQueueDelegate> delegate;
 
 @end
