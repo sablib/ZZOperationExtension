@@ -34,15 +34,6 @@
 @synthesize executing = _executing;
 @synthesize finished = _finished;
 
-+ (dispatch_queue_t)sharedQueue {
-    static dispatch_queue_t queue;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        queue = dispatch_queue_create("ZZOperation.queue", DISPATCH_QUEUE_CONCURRENT);
-    });
-    return queue;
-}
-
 + (NSSet *)keyPathsForValuesAffectingIsReady {
     return [NSSet setWithObjects:@"state", @"hasFinishEvaluatingCondtions", nil];
 }
@@ -143,21 +134,19 @@
 }
 
 - (void)finishWithErrors:(NSArray<NSError *> *)errors {
-    dispatch_async([ZZOperation sharedQueue], ^{
-        if (!self.hasFinishedAlready) {
-            self.hasFinishedAlready = YES;
-            
-            NSArray<NSError *> *combinedErrors = [self.internalErrors.copy arrayByAddingObjectsFromArray:errors];
-            [self finished:combinedErrors];
-            
-            for (id<ZZOperationObserver> observer in self.observers) {
-                [observer operationDidFinished:self withErrors:combinedErrors];
-            }
-            
-            self.executing = NO;
-            self.finished = YES;
+    if (!self.hasFinishedAlready) {
+        self.hasFinishedAlready = YES;
+        
+        NSArray<NSError *> *combinedErrors = [self.internalErrors.copy arrayByAddingObjectsFromArray:errors];
+        [self finished:combinedErrors];
+        
+        for (id<ZZOperationObserver> observer in self.observers) {
+            [observer operationDidFinished:self withErrors:combinedErrors];
         }
-    });
+        
+        self.executing = NO;
+        self.finished = YES;
+    }
 }
 
 - (void)finished:(NSArray<NSError *> *)errors {
