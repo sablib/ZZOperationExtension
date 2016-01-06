@@ -1,21 +1,20 @@
 //
-//  ZZObjectivePostlyExclusive.m
+//  ZZObjectiveKeepFirstExclusive.m
 //  ZZOperationExtension
 //
-//  Created by sablib on 15/12/11.
-//  Copyright © 2015年 sablib. All rights reserved.
+//  Created by sablib on 16/1/6.
+//  Copyright © 2016年 sablib. All rights reserved.
 //
 
-#import "ZZObjectivePostlyExclusive.h"
-#import "ZZOperationConditionResult.h"
+#import "ZZObjectiveKeepFirstExclusive.h"
 
-@interface ZZObjectivePostlyExclusive ()
+@interface ZZObjectiveKeepFirstExclusive ()
 
 @property (nonatomic, strong) id<ZZObjectiveExclusiveIdentifier> object;
 
 @end
 
-@implementation ZZObjectivePostlyExclusive
+@implementation ZZObjectiveKeepFirstExclusive
 
 - (instancetype)initWithObject:(id<ZZObjectiveExclusiveIdentifier>)object {
     if (self = [super init]) {
@@ -30,7 +29,7 @@
 }
 
 - (NSString *)name {
-    return [NSString stringWithFormat:@"PostlyExclusive<%@>", [self.object identifier]];
+    return [NSString stringWithFormat:@"KeepFirstExclusive<%@>", [self.object identifier]];
 }
 
 @end

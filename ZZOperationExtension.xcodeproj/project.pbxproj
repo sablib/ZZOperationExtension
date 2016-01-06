@@ -12,6 +12,8 @@
 		113D7A641C0453C700BD5720 /* ZZNetworkObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 113D7A631C0453C700BD5720 /* ZZNetworkObserver.m */; };
 		113D7A671C04549C00BD5720 /* ZZHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 113D7A661C04549C00BD5720 /* ZZHelper.m */; };
 		115B25581C1A98B30079BDFE /* ZZObjectivePostlyExclusive.m in Sources */ = {isa = PBXBuildFile; fileRef = 115B25571C1A98B30079BDFE /* ZZObjectivePostlyExclusive.m */; };
+		11987D9F1C3CBD2B00817AFD /* ZZKeepFirstExclusive.m in Sources */ = {isa = PBXBuildFile; fileRef = 11987D9E1C3CBD2B00817AFD /* ZZKeepFirstExclusive.m */; };
+		11987DA21C3CBD6A00817AFD /* ZZObjectiveKeepFirstExclusive.m in Sources */ = {isa = PBXBuildFile; fileRef = 11987DA11C3CBD6A00817AFD /* ZZObjectiveKeepFirstExclusive.m */; };
 		11DB9DB31C040F33009F3F32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9DB21C040F33009F3F32 /* main.m */; };
 		11DB9DB61C040F33009F3F32 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9DB51C040F33009F3F32 /* AppDelegate.m */; };
 		11DB9DB91C040F33009F3F32 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9DB81C040F33009F3F32 /* ViewController.m */; };
@@ -69,6 +71,11 @@
 		113D7A661C04549C00BD5720 /* ZZHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZHelper.m; sourceTree = "<group>"; };
 		115B25561C1A98B30079BDFE /* ZZObjectivePostlyExclusive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZObjectivePostlyExclusive.h; path = Classes/ZZObjectivePostlyExclusive.h; sourceTree = "<group>"; };
 		115B25571C1A98B30079BDFE /* ZZObjectivePostlyExclusive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZObjectivePostlyExclusive.m; path = Classes/ZZObjectivePostlyExclusive.m; sourceTree = "<group>"; };
+		11987D9D1C3CBD2B00817AFD /* ZZKeepFirstExclusive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZKeepFirstExclusive.h; path = Classes/ZZKeepFirstExclusive.h; sourceTree = "<group>"; };
+		11987D9E1C3CBD2B00817AFD /* ZZKeepFirstExclusive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZKeepFirstExclusive.m; path = Classes/ZZKeepFirstExclusive.m; sourceTree = "<group>"; };
+		11987DA01C3CBD6A00817AFD /* ZZObjectiveKeepFirstExclusive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZObjectiveKeepFirstExclusive.h; path = Classes/ZZObjectiveKeepFirstExclusive.h; sourceTree = "<group>"; };
+		11987DA11C3CBD6A00817AFD /* ZZObjectiveKeepFirstExclusive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZObjectiveKeepFirstExclusive.m; path = Classes/ZZObjectiveKeepFirstExclusive.m; sourceTree = "<group>"; };
+		11987DA31C3CBD8F00817AFD /* ZZObjectiveExclusiveIdentifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZZObjectiveExclusiveIdentifier.h; path = Classes/ZZObjectiveExclusiveIdentifier.h; sourceTree = "<group>"; };
 		11DB9DAE1C040F33009F3F32 /* ZZOperationExtension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZZOperationExtension.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DB9DB21C040F33009F3F32 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		11DB9DB41C040F33009F3F32 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -245,8 +252,13 @@
 				11ECED241C0F01A20045DCD2 /* ZZNoCancelledDependencies.m */,
 				11ECED201C0F00560045DCD2 /* ZZPostlyExclusive.h */,
 				11ECED211C0F00560045DCD2 /* ZZPostlyExclusive.m */,
+				11987D9D1C3CBD2B00817AFD /* ZZKeepFirstExclusive.h */,
+				11987D9E1C3CBD2B00817AFD /* ZZKeepFirstExclusive.m */,
+				11987DA31C3CBD8F00817AFD /* ZZObjectiveExclusiveIdentifier.h */,
 				115B25561C1A98B30079BDFE /* ZZObjectivePostlyExclusive.h */,
 				115B25571C1A98B30079BDFE /* ZZObjectivePostlyExclusive.m */,
+				11987DA01C3CBD6A00817AFD /* ZZObjectiveKeepFirstExclusive.h */,
+				11987DA11C3CBD6A00817AFD /* ZZObjectiveKeepFirstExclusive.m */,
 				11DB9DF71C040FFB009F3F32 /* ZZNegatedCondition.h */,
 				11DB9DF81C040FFB009F3F32 /* ZZNegatedCondition.m */,
 				11DB9E551C0441D2009F3F32 /* ZZNetworkIndicatorController.h */,
@@ -418,6 +430,7 @@
 				11DB9E031C040FFB009F3F32 /* NSArray+ZZExtension.m in Sources */,
 				11DB9DB91C040F33009F3F32 /* ViewController.m in Sources */,
 				113D7A611C04503B00BD5720 /* ZZURLSessionTaskOperation.m in Sources */,
+				11987D9F1C3CBD2B00817AFD /* ZZKeepFirstExclusive.m in Sources */,
 				11DB9E5A1C0448C3009F3F32 /* ZZDelayOperation.m in Sources */,
 				11DB9E071C040FFB009F3F32 /* ZZBlockObserver.m in Sources */,
 				11ECED251C0F01A20045DCD2 /* ZZNoCancelledDependencies.m in Sources */,
@@ -428,6 +441,7 @@
 				11DB9E051C040FFB009F3F32 /* NSLock+ZZExtension.m in Sources */,
 				11DB9E041C040FFB009F3F32 /* NSError+ZZOperationErrors.m in Sources */,
 				11DB9E0B1C040FFB009F3F32 /* ZZMutuallyExclusive.m in Sources */,
+				11987DA21C3CBD6A00817AFD /* ZZObjectiveKeepFirstExclusive.m in Sources */,
 				11DB9E0D1C040FFB009F3F32 /* ZZOperation.m in Sources */,
 				11DB9E101C040FFB009F3F32 /* ZZOperationQueue.m in Sources */,
 				11DB9DB31C040F33009F3F32 /* main.m in Sources */,

@@ -7,15 +7,10 @@
 //
 
 #import "ZZPostlyExclusive.h"
-
-@protocol ZZObjectivePostlyExclusiveIdentifier <NSObject>
-
-- (NSString *)identifier;
-
-@end
+#import "ZZObjectiveExclusiveIdentifier.h"
 
 @interface ZZObjectivePostlyExclusive : ZZPostlyExclusive
 
-- (instancetype)initWithObject:(id<ZZObjectivePostlyExclusiveIdentifier>)object;
+- (instancetype)initWithObject:(id<ZZObjectiveExclusiveIdentifier>)object;
 
 @end

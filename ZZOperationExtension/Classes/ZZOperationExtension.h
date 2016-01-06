@@ -20,6 +20,8 @@
 #import "ZZOperationCondition.h"
 #import "ZZPostlyExclusive.h"
 #import "ZZObjectivePostlyExclusive.h"
+#import "ZZKeepFirstExclusive.h"
+#import "ZZObjectiveKeepFirstExclusive.h"
 #import "ZZMutuallyExclusive.h"
 #import "ZZExclusivityController.h"
 #import "ZZOperationConditionResult.h"
