@@ -60,6 +60,12 @@
         if (operationsWithThisCategories.count) {
             [operationsWithThisCategories makeObjectsPerformSelector:@selector(cancel)];
         }
+    } else if ([category hasPrefix:@"KeepFirstExclusive"]) {
+        if (operationsWithThisCategories.count && [operationsWithThisCategories zz_filter:^BOOL(NSOperation *each) {
+            return ![each isCancelled];
+        }].count) {
+            [operation cancel];
+        }
     } else {
         if (operationsWithThisCategories.count) {
             ZZOperation *last = operationsWithThisCategories.lastObject;
