@@ -24,7 +24,7 @@
 }
 
 - (instancetype)initWithMainQueueBlock:(dispatch_block_t)block {
-    return [self initWithBlock:^(dispatch_block_t continuation) {
+    return [self initWithBlock:^(dispatch_block_t continuation, BOOL(^isCancelled)()) {
         dispatch_async(dispatch_get_main_queue(), ^{
             block();
             continuation();
@@ -33,9 +33,16 @@
 }
 
 - (void)execute {
+    if ([self isCancelled]) {
+        [self finish];
+        return;
+    }
+
     if (self.block) {
         self.block(^{
             [self finish];
+        }, ^BOOL{
+            return [self isCancelled];
         });
     } else {
         [self finish];

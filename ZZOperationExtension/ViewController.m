@@ -32,8 +32,13 @@
 }
 
 - (IBAction)buttonClicked:(id)sender {
-    ZZBlockOperation *op = [[ZZBlockOperation alloc] initWithBlock:^(dispatch_block_t block) {
+    ZZBlockOperation *op = [[ZZBlockOperation alloc] initWithBlock:^(dispatch_block_t block, BOOL(^isCancelled)()){
         dispatch_async(dispatch_get_main_queue(), ^{
+            if (isCancelled()) {
+                block();
+                return;
+            }
+
             UIViewController *vc = [[UIViewController alloc] init];
             vc.view.backgroundColor = [UIColor greenColor];
             [[ZZHelper topMostVC] presentViewController:vc animated:YES completion:^{
@@ -42,8 +47,12 @@
         });
     }];
     
-    ZZBlockOperation *op1 = [[ZZBlockOperation alloc] initWithBlock:^(dispatch_block_t block) {
+    ZZBlockOperation *op1 = [[ZZBlockOperation alloc] initWithBlock:^(dispatch_block_t block, BOOL(^isCancelled)()){
         dispatch_async(dispatch_get_main_queue(), ^{
+            if (isCancelled()) {
+                block();
+                return;
+            }
             UIViewController *vc = [[UIViewController alloc] init];
             vc.view.backgroundColor = [UIColor redColor];
             [[ZZHelper topMostVC] presentViewController:vc animated:YES completion:^{
