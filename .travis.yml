@@ -1,11 +1,10 @@
 language: objective-c
 osx_image: xcode7.2
 
-xcode_project: ZZOperationExtension.xcodeproj
-xcode_scheme: ZZOperationExtension
-
 script:
   xctool
+  -project ZZOperationExtension.xcodeproj
+  -scheme ZZOperationExtension
   -sdk iphonesimulator
   build
   test
