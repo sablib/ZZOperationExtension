@@ -13,4 +13,4 @@ script:
 
 before_install:
   - brew update
-  - brew install xctool
+  - brew uninstall xctool && brew install xctool
