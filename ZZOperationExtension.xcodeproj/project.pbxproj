@@ -81,7 +81,6 @@
 		11DB9DC71C040F33009F3F32 /* ZZOperationExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZZOperationExtensionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DB9DCB1C040F33009F3F32 /* ZZOperationExtensionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZOperationExtensionTests.m; sourceTree = "<group>"; };
 		11DB9DCD1C040F33009F3F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		11DB9DD61C040F33009F3F32 /* ZZOperationExtensionUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZOperationExtensionUITests.m; sourceTree = "<group>"; };
 		11DB9DD81C040F33009F3F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11DB9DE51C040FFB009F3F32 /* NSArray+ZZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+ZZExtension.h"; path = "Classes/NSArray+ZZExtension.h"; sourceTree = "<group>"; };
 		11DB9DE61C040FFB009F3F32 /* NSArray+ZZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+ZZExtension.m"; path = "Classes/NSArray+ZZExtension.m"; sourceTree = "<group>"; };
@@ -149,7 +148,6 @@
 			children = (
 				11DB9DB01C040F33009F3F32 /* ZZOperationExtension */,
 				11DB9DCA1C040F33009F3F32 /* ZZOperationExtensionTests */,
-				11DB9DD51C040F33009F3F32 /* ZZOperationExtensionUITests */,
 				11DB9DAF1C040F33009F3F32 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -197,15 +195,6 @@
 				11DB9DCD1C040F33009F3F32 /* Info.plist */,
 			);
 			path = ZZOperationExtensionTests;
-			sourceTree = "<group>";
-		};
-		11DB9DD51C040F33009F3F32 /* ZZOperationExtensionUITests */ = {
-			isa = PBXGroup;
-			children = (
-				11DB9DD61C040F33009F3F32 /* ZZOperationExtensionUITests.m */,
-				11DB9DD81C040F33009F3F32 /* Info.plist */,
-			);
-			path = ZZOperationExtensionUITests;
 			sourceTree = "<group>";
 		};
 		11DB9DE41C040F3C009F3F32 /* ZZOperation */ = {
