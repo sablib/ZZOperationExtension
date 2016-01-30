@@ -1,5 +1,5 @@
 language: objective-c
 xcode_project: ZZOperationExtension.xcodeproj
-xcode_scheme: ZZOperationExtensionTests
+xcode_scheme: ZZOperationExtension
 
 osx_image: xcode7.2
