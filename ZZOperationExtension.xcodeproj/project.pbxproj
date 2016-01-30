@@ -21,7 +21,6 @@
 		11DB9DBE1C040F33009F3F32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11DB9DBD1C040F33009F3F32 /* Assets.xcassets */; };
 		11DB9DC11C040F33009F3F32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11DB9DBF1C040F33009F3F32 /* LaunchScreen.storyboard */; };
 		11DB9DCC1C040F33009F3F32 /* ZZOperationExtensionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9DCB1C040F33009F3F32 /* ZZOperationExtensionTests.m */; };
-		11DB9DD71C040F33009F3F32 /* ZZOperationExtensionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9DD61C040F33009F3F32 /* ZZOperationExtensionUITests.m */; };
 		11DB9E031C040FFB009F3F32 /* NSArray+ZZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9DE61C040FFB009F3F32 /* NSArray+ZZExtension.m */; };
 		11DB9E041C040FFB009F3F32 /* NSError+ZZOperationErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9DE81C040FFB009F3F32 /* NSError+ZZOperationErrors.m */; };
 		11DB9E051C040FFB009F3F32 /* NSLock+ZZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DB9DEA1C040FFB009F3F32 /* NSLock+ZZExtension.m */; };
@@ -45,13 +44,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		11DB9DC81C040F33009F3F32 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 11DB9DA61C040F33009F3F32 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 11DB9DAD1C040F33009F3F32;
-			remoteInfo = ZZOperationExtension;
-		};
-		11DB9DD31C040F33009F3F32 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 11DB9DA61C040F33009F3F32 /* Project object */;
 			proxyType = 1;
@@ -89,7 +81,6 @@
 		11DB9DC71C040F33009F3F32 /* ZZOperationExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZZOperationExtensionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DB9DCB1C040F33009F3F32 /* ZZOperationExtensionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZOperationExtensionTests.m; sourceTree = "<group>"; };
 		11DB9DCD1C040F33009F3F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		11DB9DD21C040F33009F3F32 /* ZZOperationExtensionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZZOperationExtensionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DB9DD61C040F33009F3F32 /* ZZOperationExtensionUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZOperationExtensionUITests.m; sourceTree = "<group>"; };
 		11DB9DD81C040F33009F3F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11DB9DE51C040FFB009F3F32 /* NSArray+ZZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+ZZExtension.h"; path = "Classes/NSArray+ZZExtension.h"; sourceTree = "<group>"; };
@@ -150,13 +141,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		11DB9DCF1C040F33009F3F32 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -175,7 +159,6 @@
 			children = (
 				11DB9DAE1C040F33009F3F32 /* ZZOperationExtension.app */,
 				11DB9DC71C040F33009F3F32 /* ZZOperationExtensionTests.xctest */,
-				11DB9DD21C040F33009F3F32 /* ZZOperationExtensionUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -324,24 +307,6 @@
 			productReference = 11DB9DC71C040F33009F3F32 /* ZZOperationExtensionTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		11DB9DD11C040F33009F3F32 /* ZZOperationExtensionUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 11DB9DE11C040F33009F3F32 /* Build configuration list for PBXNativeTarget "ZZOperationExtensionUITests" */;
-			buildPhases = (
-				11DB9DCE1C040F33009F3F32 /* Sources */,
-				11DB9DCF1C040F33009F3F32 /* Frameworks */,
-				11DB9DD01C040F33009F3F32 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				11DB9DD41C040F33009F3F32 /* PBXTargetDependency */,
-			);
-			name = ZZOperationExtensionUITests;
-			productName = ZZOperationExtensionUITests;
-			productReference = 11DB9DD21C040F33009F3F32 /* ZZOperationExtensionUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -355,10 +320,6 @@
 						CreatedOnToolsVersion = 7.1.1;
 					};
 					11DB9DC61C040F33009F3F32 = {
-						CreatedOnToolsVersion = 7.1.1;
-						TestTargetID = 11DB9DAD1C040F33009F3F32;
-					};
-					11DB9DD11C040F33009F3F32 = {
 						CreatedOnToolsVersion = 7.1.1;
 						TestTargetID = 11DB9DAD1C040F33009F3F32;
 					};
@@ -379,7 +340,6 @@
 			targets = (
 				11DB9DAD1C040F33009F3F32 /* ZZOperationExtension */,
 				11DB9DC61C040F33009F3F32 /* ZZOperationExtensionTests */,
-				11DB9DD11C040F33009F3F32 /* ZZOperationExtensionUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -396,13 +356,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		11DB9DC51C040F33009F3F32 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		11DB9DD01C040F33009F3F32 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -456,14 +409,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		11DB9DCE1C040F33009F3F32 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				11DB9DD71C040F33009F3F32 /* ZZOperationExtensionUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -471,11 +416,6 @@
 			isa = PBXTargetDependency;
 			target = 11DB9DAD1C040F33009F3F32 /* ZZOperationExtension */;
 			targetProxy = 11DB9DC81C040F33009F3F32 /* PBXContainerItemProxy */;
-		};
-		11DB9DD41C040F33009F3F32 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 11DB9DAD1C040F33009F3F32 /* ZZOperationExtension */;
-			targetProxy = 11DB9DD31C040F33009F3F32 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -627,30 +567,6 @@
 			};
 			name = Release;
 		};
-		11DB9DE21C040F33009F3F32 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = ZZOperationExtensionUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.sablib.ZZOperationExtensionUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = ZZOperationExtension;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		11DB9DE31C040F33009F3F32 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = ZZOperationExtensionUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.sablib.ZZOperationExtensionUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = ZZOperationExtension;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -677,15 +593,6 @@
 			buildConfigurations = (
 				11DB9DDF1C040F33009F3F32 /* Debug */,
 				11DB9DE01C040F33009F3F32 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		11DB9DE11C040F33009F3F32 /* Build configuration list for PBXNativeTarget "ZZOperationExtensionUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				11DB9DE21C040F33009F3F32 /* Debug */,
-				11DB9DE31C040F33009F3F32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
