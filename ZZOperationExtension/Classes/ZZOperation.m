@@ -35,7 +35,7 @@
 @synthesize finished = _finished;
 
 + (NSSet *)keyPathsForValuesAffectingIsReady {
-    return [NSSet setWithObjects:@"state", @"hasFinishEvaluatingCondtions", nil];
+    return [NSSet setWithObjects:@"hasFinishEvaluatingCondtions", nil];
 }
 
 + (NSSet *)keyPathsForValuesAffectingIsFinished {
@@ -45,6 +45,25 @@
 + (NSSet *)keyPathsForValuesAffectingIsExecuting {
     return [NSSet setWithObjects:@"executing", nil];
 }
+
+- (void)setHasFinishedAlready:(BOOL)hasFinishedAlready {
+    [self willChangeValueForKey:@"hasFinishedAlready"];
+    _hasFinishedAlready = hasFinishedAlready;
+    [self didChangeValueForKey:@"hasFinishedAlready"];
+}
+
+- (void)setExecuting:(BOOL)executing {
+    [self willChangeValueForKey:@"executing"];
+    _executing = executing;
+    [self didChangeValueForKey:@"executing"];
+}
+
+- (void)setFinished:(BOOL)finished {
+    [self willChangeValueForKey:@"finished"];
+    _finished = finished;
+    [self didChangeValueForKey:@"finished"];
+}
+
 
 - (instancetype)init {
     if (self = [super init]) {
