@@ -3,7 +3,7 @@ osx_image: xcode8.3
 
 script:
   - pod spec lint ZZOperationExtension.podspec
-  - xcodebuild -project ZZOperationExtension.xcodeproj -scheme ZZOperationExtension -sdk iphonesimulator build test ONLY_VALID_ARCH=NO CODE_SIGNING_REQUIRED=NO
+  - xcodebuild -project ZZOperationExtension.xcodeproj -scheme ZZOperationExtension -sdk iphonesimulator build ONLY_VALID_ARCH=NO CODE_SIGNING_REQUIRED=NO
 
 before_install:
   - brew update
