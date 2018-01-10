@@ -10,7 +10,7 @@
 
 @implementation NSLock (ZZExtension)
 
-- (id)withCriticalScope:(id(^)())block
+- (id)withCriticalScope:(id(^)(void))block
 {
     [self lock];
     id value = block();

@@ -24,7 +24,7 @@
 }
 
 - (instancetype)initWithMainQueueBlock:(dispatch_block_t)block {
-    return [self initWithBlock:^(dispatch_block_t continuation, BOOL(^isCancelled)()) {
+    return [self initWithBlock:^(dispatch_block_t continuation, BOOL(^isCancelled)(void)) {
         dispatch_async(dispatch_get_main_queue(), ^{
             block();
             continuation();

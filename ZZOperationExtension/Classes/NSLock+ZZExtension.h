@@ -10,6 +10,6 @@
 
 @interface NSLock (ZZExtension)
 
-- (id)withCriticalScope:(id(^)())block;
+- (id)withCriticalScope:(id(^)(void))block;
 
 @end

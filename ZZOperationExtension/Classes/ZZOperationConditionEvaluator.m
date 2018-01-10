@@ -29,17 +29,17 @@
     }];
     
     dispatch_group_notify(conditionGroup, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSMutableArray<NSError *> *failures = [[results zz_filter:^BOOL(ZZOperationConditionResult *each) {
+        NSMutableArray<NSError *> *failures = [[[results.copy zz_filter:^BOOL(ZZOperationConditionResult *each) {
             return each.type == ZZOperationConditionResultError && each.error;
         }] zz_map:^NSError *(ZZOperationConditionResult *each) {
             return each.error;
-        }].mutableCopy;
+        }] mutableCopy];
         
         if (operation.isCancelled) {
             [failures addObject:[NSError zz_errorWithCode:ZZOperationErrorConditionFailed]];
         }
         
-        completion(failures);
+        completion([failures copy]);
     });
 }
 

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ZZOperation.h"
 
-typedef void(^ZZOperationBlock)(dispatch_block_t block, BOOL(^isCancelled)());
+typedef void(^ZZOperationBlock)(dispatch_block_t block, BOOL(^isCancelled)(void));
 
 
 @interface ZZBlockOperation : ZZOperation
