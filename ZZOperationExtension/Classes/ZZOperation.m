@@ -16,10 +16,10 @@
 
 @property (nonatomic, strong) NSLock *stateLock;
 
-@property (nonatomic, strong, readwrite) NSMutableArray<id<ZZOperationCondition>> *conditions;
+@property (nonatomic, strong, readwrite) NSArray<id<ZZOperationCondition>> *conditions;
 @property (nonatomic, strong) NSMutableArray<id<ZZOperationObserver>> *observers;
 
-@property (nonatomic, strong) NSMutableArray<NSError *> *internalErrors;
+@property (nonatomic, strong) NSArray<NSError *> *internalErrors;
 
 @property (nonatomic, assign) BOOL hasFinishedAlready;
 @property (nonatomic, assign) BOOL hasFinishEvaluatingCondtions;
@@ -69,7 +69,7 @@
     if (self = [super init]) {
         _conditions = @[].mutableCopy;
         _observers = @[].mutableCopy;
-        _internalErrors = @[].mutableCopy;
+        _internalErrors = @[];
         _hasFinishedAlready = NO;
         _hasFinishEvaluatingCondtions = NO;
     }
@@ -95,7 +95,7 @@
         self.hasFinishEvaluatingCondtions = YES;
     } else {
         [ZZOperationConditionEvaluator evaluateWithConditions:self.conditions operation:self completion:^(NSArray<NSError *> *failures) {
-            [self.internalErrors addObjectsFromArray:failures];
+            self.internalErrors = [self.internalErrors arrayByAddingObjectsFromArray:failures];
             if (failures.count) {
                 self.hasFinishEvaluatingCondtions = NO;
             } else {
@@ -109,7 +109,7 @@
 - (void)addCondition:(id<ZZOperationCondition>)condition {
     NSAssert(self.hasFinishEvaluatingCondtions == NO, @"cannot add condition after evaluatingConditions");
     
-    [self.conditions addObject:condition];
+    self.conditions = [self.conditions arrayByAddingObject:condition];
 }
 
 - (void)addObserver:(id<ZZOperationObserver>)observer {
@@ -156,7 +156,7 @@
     if (!self.hasFinishedAlready) {
         self.hasFinishedAlready = YES;
         
-        NSArray<NSError *> *combinedErrors = [self.internalErrors.copy arrayByAddingObjectsFromArray:errors];
+        NSArray<NSError *> *combinedErrors = [self.internalErrors arrayByAddingObjectsFromArray:errors];
         [self finished:combinedErrors];
         
         for (id<ZZOperationObserver> observer in self.observers) {
@@ -182,7 +182,7 @@
 
 - (void)cancelWithError:(NSError *)error {
     if (error) {
-        [self.internalErrors addObject:error];
+        self.internalErrors = [self.internalErrors arrayByAddingObject:error];
     }
     [self cancel];
 }

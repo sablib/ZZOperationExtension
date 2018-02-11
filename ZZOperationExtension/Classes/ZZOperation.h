@@ -27,9 +27,7 @@
 
 @interface ZZOperation : NSOperation
 
-//@property (nonatomic, assign) ZZOperationState state;
-
-@property (nonatomic, readonly) NSMutableArray<id<ZZOperationCondition>> *conditions;
+@property (nonatomic, readonly) NSArray<id<ZZOperationCondition>> *conditions;
 
 - (void)willEnqueue;
 - (void)execute;
