@@ -29,7 +29,7 @@
 }
 
 - (NSString *)name {
-    return [NSString stringWithFormat:@"KeepFirstExclusive<%@>", [self.object identifier]];
+    return [NSString stringWithFormat:@"KeepFirstExclusive<%@>", [self.object zz_identifier]];
 }
 
 @end

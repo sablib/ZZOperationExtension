@@ -11,7 +11,7 @@
 
 @protocol ZZObjectiveExclusiveIdentifier <NSObject>
 
-- (NSString *)identifier;
+- (NSString *)zz_identifier;
 
 @end
 
